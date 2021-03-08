@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/amazinglenar"
+
+    android:layoutDirection="rtl">
+
+    <androidx.cardview.widget.CardView
+        android:layout_marginRight="4dp"
+        android:background="#ffffff"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="4dp">
+
+        <LinearLayout
+            android:background="#ffffff"
+            android:layout_width="170dp"
+            android:layout_height="250dp"
+            android:gravity="center"
+            android:padding="8dp"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="140dp"
+                android:layout_height="140dp"
+                android:layout_marginBottom="16dp"
+                android:id="@+id/imgPic"
+                android:src="@drawable/mobile"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:text="MSI CX61 2PC"
+                android:textColor="#2f2f2f"
+                android:id="@+id/txttitle"
+                android:layout_marginBottom="4dp"
+                android:layout_marginTop="4dp"
+                />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#3A3939"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="24000"
+                android:id="@+id/txtprice"
+                android:textColor="#2196F3"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="28000"
+                android:id="@+id/txtpprice"
+                android:gravity="center_vertical"
+                android:background="@drawable/redline"
+                android:textColor="#f90427"/>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>

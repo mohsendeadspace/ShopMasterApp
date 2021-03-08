@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  android:orientation="vertical" android:layout_width="match_parent"
+  android:layout_height="match_parent">
+
+  <include layout="@layout/toolbar"/>
+
+
+  <LinearLayout
+    android:layout_marginTop="8dp"
+    android:layout_weight="0.9"
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:orientation="vertical"
+    android:gravity="right">
+
+
+  <com.google.android.material.textfield.TextInputLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <EditText
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:hint="پست الکترونیک"
+      android:drawableRight="@drawable/ic_email_black_24dp"
+      android:layout_marginLeft="24dp"
+      android:layout_marginRight="24dp"
+      android:inputType="textEmailAddress"
+      android:id="@+id/edt_Email"/>
+
+  </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content">
+
+
+      <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="کلمه عبور"
+        android:drawableRight="@drawable/ic_lock_black_24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginRight="24dp"
+        android:inputType="textPassword"
+        android:id="@+id/edt_pass"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <LinearLayout
+      android:layout_marginTop="12dp"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:orientation="horizontal">
+
+
+      <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="نمایش کلمه عبور"/>
+      <androidx.appcompat.widget.AppCompatCheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/showPass"
+        android:layout_marginRight="24dp"/>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+      android:layout_marginTop="48dp"
+      android:id="@+id/forgetPass"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:gravity="center">
+
+      <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="رمز عبور را فراموش کرده ام!"/>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+      android:layout_marginTop="14dp"
+      android:id="@+id/signUp"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:gravity="center">
+
+      <TextView
+        android:textColor="#4CAF50"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txt_register"
+        android:text="ثبت نام در مستر شاپ"/>
+
+
+    </LinearLayout>
+
+
+  </LinearLayout>
+
+  <LinearLayout
+    android:layout_weight="0.1"
+    android:layout_gravity="bottom"
+    android:gravity="center"
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:orientation="horizontal"
+    android:id="@+id/btnGO"
+    android:background="#C3C3C2">
+
+    <ImageView
+      android:layout_gravity="center_vertical"
+      android:layout_width="32dp"
+      android:layout_height="32dp"
+      android:scaleType="fitCenter"
+      android:src="@drawable/ic_arrow_back_black_24dp"/>
+
+    <TextView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginLeft="16dp"
+      android:text="ورود به مستر شاپ"/>
+
+  </LinearLayout>
+
+
+</LinearLayout>

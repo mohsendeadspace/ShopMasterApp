@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+  package="com.mohsendeadspace.app.shopmaster">
+
+  <uses-permission android:name="android.permission.INTERNET"/>
+  <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+
+  <application
+    android:name=".G"
+    android:allowBackup="true"
+    android:icon="@mipmap/ic_launcher"
+    android:label="@string/app_name"
+    android:roundIcon="@mipmap/ic_launcher_round"
+    android:supportsRtl="true"
+    android:theme="@style/AppTheme">
+    <activity android:name=".ActivitySplash">
+      <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+
+        <category android:name="android.intent.category.LAUNCHER" />
+      </intent-filter>
+    </activity>
+
+    <activity android:name=".MainActivity">
+      <intent-filter>
+        <action android:name="android.intent.action.MAINACTIVITY" />
+
+        <category android:name="android.intent.category.DEFAULT" />
+      </intent-filter>
+    </activity>
+
+    <activity android:name=".ActivityShow"
+        android:theme="@style/ActivityShow"
+        >
+      <intent-filter>
+        <action android:name="android.intent.action.ACTIVITYSHOW" />
+
+        <category android:name="android.intent.category.DEFAULT" />
+      </intent-filter>
+    </activity>
+
+    <activity android:name=".ActivityUserSign">
+      <intent-filter>
+        <action android:name="android.intent.action.ACTIVITYUSERSIGN" />
+
+        <category android:name="android.intent.category.DEFULTE" />
+      </intent-filter>
+    </activity>
+
+    <activity android:name=".ActivityUserSingUp"
+        android:theme="@style/ActivityWait">
+
+      <intent-filter>
+        <action android:name="android.intent.action.ACTIVITYUSERSIGNUP" />
+
+        <category android:name="android.intent.category.DEFULTE" />
+      </intent-filter>
+    </activity>
+
+
+    <activity android:name=".ActivityWait">
+      <intent-filter>
+        <action android:name="android.intent.action.ACTIVITYWAIT" />
+
+        <category android:name="android.intent.category.DEFULTE" />
+      </intent-filter>
+    </activity>
+
+  </application>
+
+</manifest>
