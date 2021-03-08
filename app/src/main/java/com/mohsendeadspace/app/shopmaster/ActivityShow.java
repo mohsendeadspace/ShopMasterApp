@@ -48,7 +48,7 @@ public class ActivityShow extends AppCompatActivity  implements BaseSliderView.O
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_show);
-
+       Log.i("Log",info);
         //Toast.makeText(G.context,info,Toast.LENGTH_LONG).show();
 
         txttitle_one =(TextView) findViewById(R.id.txttitle_one);
@@ -93,7 +93,7 @@ public class ActivityShow extends AppCompatActivity  implements BaseSliderView.O
             {
                 JSONObject object = jsonArray.getJSONObject(i);
                 String pic = object.getString("pic");
-                String picUrl = "http://192.168.1.2/AndroidProject/MasterShop/img/"+pic;
+                String picUrl = "http://192.168.1.4/AndroidProject/MasterShop/img/"+pic;
 
                 urlPics.add(picUrl);
                 Log.i("LOG",urlPics.get(i));
@@ -113,6 +113,12 @@ public class ActivityShow extends AppCompatActivity  implements BaseSliderView.O
                 String desc = object.getString("intro");
                 String color = object.getString("color");
                 String gaurantee = object.getString("gaurantee");
+
+                JSONArray points = object.getJSONArray("point");
+                for (int j = 0; j< points.length(); j++){
+                    String title2 = (String) points.get(j);
+                    Toast.makeText(G.context,title2,Toast.LENGTH_LONG).show();
+                }
 
 
 

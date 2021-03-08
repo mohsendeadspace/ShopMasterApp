@@ -64,7 +64,7 @@ public class ActivityUserSign extends AppCompatActivity {
         String email = edt_Email.getText().toString();
         String pass = edt_pass.getText().toString();
 
-        new AsyncTaskConnect("http://192.168.1.2/AndroidProject/MasterShop/index/",email,pass).execute();
+        new AsyncTaskConnect("http://192.168.1.4/AndroidProject/MasterShop/index/",email,pass).execute();
 
 
         final ProgressDialog dialog = new ProgressDialog(ActivityUserSign.this);

@@ -5,10 +5,16 @@ import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.LinearLayout;
+import android.widget.ProgressBar;
+import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 
 public class CustomPoint  extends LinearLayout {
+
+    TextView txtPoint;
+    ProgressBar progressbar;
+
 
     public CustomPoint(Context context) {
         super(context);
@@ -28,7 +34,10 @@ public class CustomPoint  extends LinearLayout {
     private void init(Context context) {
 
         LayoutInflater inflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        final View view = inflater.inflate(R.layout.product_amazing,this,true);
+        final View view = inflater.inflate(R.layout.custom_point,this,true);
+
+        progressbar = (ProgressBar) view.findViewById(R.id.progressbar);
+        txtPoint = (TextView) view.findViewById(R.id.txtPoint);
 
     }
 

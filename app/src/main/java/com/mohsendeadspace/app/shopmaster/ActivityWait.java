@@ -20,9 +20,9 @@ public class ActivityWait extends AppCompatActivity {
         int id = bundle.getInt("id");
         String idFinal=String.valueOf(id);
 
-        new AsyncTaskGetDetail("http://192.168.1.2/AndroidProject/MasterShop/getdetail.php",idFinal).execute();
-        new AsyncTaskShowTimer("http://192.168.1.2/AndroidProject/MasterShop/androidtimer.php").execute();
-        new AsyncTaskGetPruductInfo("http://192.168.1.2/AndroidProject/MasterShop/getproductinfo.php",idFinal).execute();
+        new AsyncTaskGetDetail("http://192.168.1.4/AndroidProject/MasterShop/getdetail.php",idFinal).execute();
+        new AsyncTaskShowTimer("http://192.168.1.4/AndroidProject/MasterShop/androidtimer.php").execute();
+        new AsyncTaskGetPruductInfo("http://192.168.1.4/AndroidProject/MasterShop/getproductinfo.php",idFinal).execute();
 
 
         final Timer timer =  new Timer();
