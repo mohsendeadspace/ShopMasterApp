@@ -35,7 +35,8 @@ public class ActivityShow extends AppCompatActivity  implements BaseSliderView.O
     public static String info= "";
     public static String timer= "";
     TextView txttitle_one,txttitle_two,txtcolor,txtGaurantee,txtDesc,txtPrice,txtMore;
-
+    LinearLayout linearPoint;
+    LinearLayout.LayoutParams layoutParams;
 
 
 
@@ -58,6 +59,7 @@ public class ActivityShow extends AppCompatActivity  implements BaseSliderView.O
         txtDesc =(TextView) findViewById(R.id.txtDesc);
         txtPrice =(TextView) findViewById(R.id.txtPrice);
         txtMore =(TextView) findViewById(R.id.txtMore);
+        linearPoint =(LinearLayout) findViewById(R.id.linearPoint);
 
 
         txtMore.setOnClickListener(new View.OnClickListener() {
@@ -93,7 +95,7 @@ public class ActivityShow extends AppCompatActivity  implements BaseSliderView.O
             {
                 JSONObject object = jsonArray.getJSONObject(i);
                 String pic = object.getString("pic");
-                String picUrl = "http://192.168.1.4/AndroidProject/MasterShop/img/"+pic;
+                String picUrl = "http://192.168.1.2/AndroidProject/MasterShop/img/"+pic;
 
                 urlPics.add(picUrl);
                 Log.i("LOG",urlPics.get(i));
@@ -117,7 +119,11 @@ public class ActivityShow extends AppCompatActivity  implements BaseSliderView.O
                 JSONArray points = object.getJSONArray("point");
                 for (int j = 0; j< points.length(); j++){
                     String title2 = (String) points.get(j);
-                    Toast.makeText(G.context,title2,Toast.LENGTH_LONG).show();
+                    //Toast.makeText(G.context,title2,Toast.LENGTH_LONG).show();
+                    CustomPoint customPoint = new CustomPoint(G.context);
+                    customPoint.txtPoint.setText(title2);
+                    layoutParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT,LinearLayout.LayoutParams.WRAP_CONTENT);
+                    linearPoint.addView(customPoint);
                 }
 
 

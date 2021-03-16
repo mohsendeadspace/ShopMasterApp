@@ -302,9 +302,9 @@ public class MainActivity extends AppCompatActivity implements BaseSliderView.On
 
     urlPics = new ArrayList<>();
     names = new ArrayList<>();
-    urlPics.add("http://192.168.1.4/AndroidProject/MasterShop/img/banner_final.jpg");
-    urlPics.add("http://192.168.1.4/AndroidProject/MasterShop/img/banner_two.png");
-    urlPics.add("http://192.168.1.4/AndroidProject/MasterShop/img/mobile2.jpg");
+    urlPics.add("http://192.168.1.2/AndroidProject/MasterShop/img/banner_final.jpg");
+    urlPics.add("http://192.168.1.2/AndroidProject/MasterShop/img/banner_two.png");
+    urlPics.add("http://192.168.1.2/AndroidProject/MasterShop/img/mobile2.jpg");
 
     names.add("گوشی");
     names.add("لپ تاپ");
@@ -399,7 +399,7 @@ public class MainActivity extends AppCompatActivity implements BaseSliderView.On
         String title = object.getString("title");
         String price = String.valueOf(object.getInt("price")+ "تومان") ;
         String pic = object.getString("pic");
-        String picUrl = "http://192.168.1.4/AndroidProject/MasterShop/img/"+pic;
+        String picUrl = "http://192.168.1.2/AndroidProject/MasterShop/img/"+pic;
 
         createProductUniqe(title,price,picUrl);
 
@@ -423,7 +423,7 @@ public class MainActivity extends AppCompatActivity implements BaseSliderView.On
         String  pPrice = String.valueOf(object.getInt("pprice")+ "تومان") ;
         String price = String.valueOf(object.getInt("price")+ "تومان") ;
         String pic = object.getString("pic");
-        String picUrl = "http://192.168.1.4/AndroidProject/MasterShop/img/"+pic;
+        String picUrl = "http://192.168.1.2/AndroidProject/MasterShop/img/"+pic;
 
         createProductAmazing(id,title,pPrice,price,picUrl);
 
@@ -444,7 +444,7 @@ public class MainActivity extends AppCompatActivity implements BaseSliderView.On
         String  pPrice = String.valueOf(object.getInt("pprice")+ "تومان") ;
         String price = String.valueOf(object.getInt("price")+ "تومان") ;
         String pic = object.getString("pic");
-        String picUrl = "http://192.168.1.4/AndroidProject/MasterShop/img/"+pic;
+        String picUrl = "http://192.168.1.2/AndroidProject/MasterShop/img/"+pic;
 
         createProductNew(title,pPrice,price,picUrl);
 
@@ -465,7 +465,7 @@ public class MainActivity extends AppCompatActivity implements BaseSliderView.On
         String  pPrice = String.valueOf(object.getInt("pprice")+ "تومان") ;
         String price = String.valueOf(object.getInt("price")+ "تومان") ;
         String pic = object.getString("pic");
-        String picUrl = "http://192.168.1.4/AndroidProject/MasterShop/img/"+pic;
+        String picUrl = "http://192.168.1.2/AndroidProject/MasterShop/img/"+pic;
 
         createProductMostSell(title,pPrice,price,picUrl);
 
@@ -485,7 +485,7 @@ public class MainActivity extends AppCompatActivity implements BaseSliderView.On
         JSONObject object = jsonArray.getJSONObject(i);
         int id = object.getInt("id");
         String pic = object.getString("pic");
-        String picUrl = "http://192.168.1.4/AndroidProject/MasterShop/img/"+pic;
+        String picUrl = "http://192.168.1.2/AndroidProject/MasterShop/img/"+pic;
 
         bannerArray.add(i,picUrl);
       }

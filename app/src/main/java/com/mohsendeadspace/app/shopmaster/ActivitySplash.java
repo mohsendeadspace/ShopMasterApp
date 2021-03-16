@@ -17,12 +17,12 @@ public class ActivitySplash extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.splash_activity);
 
-        new AsyncTaskTimer("http://192.168.1.4/AndroidProject/MasterShop/androidtimer.php").execute();
-        new AsyncTaskAmaizingProduct("http://192.168.1.4/AndroidProject/MasterShop/readamazing.php").execute();
-        new AsyncTaskNewProduct("http://192.168.1.4/AndroidProject/MasterShop/newproduct.php").execute();
-        new AsyncTaskMostSellProduct("http://192.168.1.4/AndroidProject/MasterShop/mostsell.php").execute();
-        new AsyncTaskUniqeProduct("http://192.168.1.4/AndroidProject/MasterShop/unique.php").execute();
-        new AsyncTaskBanners("http://192.168.1.4/AndroidProject/MasterShop/readbanner.php").execute();
+        new AsyncTaskTimer("http://192.168.1.2/AndroidProject/MasterShop/androidtimer.php").execute();
+        new AsyncTaskAmaizingProduct("http://192.168.1.2/AndroidProject/MasterShop/readamazing.php").execute();
+        new AsyncTaskNewProduct("http://192.168.1.2/AndroidProject/MasterShop/newproduct.php").execute();
+        new AsyncTaskMostSellProduct("http://192.168.1.2/AndroidProject/MasterShop/mostsell.php").execute();
+        new AsyncTaskUniqeProduct("http://192.168.1.2/AndroidProject/MasterShop/unique.php").execute();
+        new AsyncTaskBanners("http://192.168.1.2/AndroidProject/MasterShop/readbanner.php").execute();
 
         final Timer timer =  new Timer();
         timer.scheduleAtFixedRate(new TimerTask() {
