@@ -40,7 +40,7 @@ public class ActivityUserSingUp extends AppCompatActivity {
 
         if (pass.equals(repass)){
 
-          new AsyncTaskInsertUser("http://192.168.1.2/AndroidProject/MasterShop/insertuser/",email,pass).execute();
+          new AsyncTaskInsertUser("http://192.168.1.5/AndroidProject/MasterShop/insertuser/",email,pass).execute();
 
           final ProgressDialog dialog = new ProgressDialog(ActivityUserSingUp.this);
           dialog.setMessage("لطفا منتظر بمانید ...");

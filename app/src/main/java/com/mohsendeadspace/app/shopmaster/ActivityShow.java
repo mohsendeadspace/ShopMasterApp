@@ -37,7 +37,7 @@ public class ActivityShow extends AppCompatActivity  implements BaseSliderView.O
     TextView txttitle_one,txttitle_two,txtcolor,txtGaurantee,txtDesc,txtPrice,txtMore;
     LinearLayout linearPoint;
     LinearLayout.LayoutParams layoutParams;
-
+    public int pointLenth = 0;
 
 
     public static Handler handler;
@@ -95,7 +95,7 @@ public class ActivityShow extends AppCompatActivity  implements BaseSliderView.O
             {
                 JSONObject object = jsonArray.getJSONObject(i);
                 String pic = object.getString("pic");
-                String picUrl = "http://192.168.1.2/AndroidProject/MasterShop/img/"+pic;
+                String picUrl = "http://192.168.1.5/AndroidProject/MasterShop/img/"+pic;
 
                 urlPics.add(picUrl);
                 Log.i("LOG",urlPics.get(i));
@@ -119,7 +119,8 @@ public class ActivityShow extends AppCompatActivity  implements BaseSliderView.O
                 JSONArray points = object.getJSONArray("point");
                 for (int j = 0; j< points.length(); j++){
                     String title2 = (String) points.get(j);
-                    //Toast.makeText(G.context,title2,Toast.LENGTH_LONG).show();
+                    pointLenth = points.length();
+                    Toast.makeText(G.context,pointLenth+"",Toast.LENGTH_SHORT).show();
                     CustomPoint customPoint = new CustomPoint(G.context);
                     customPoint.txtPoint.setText(title2);
                     layoutParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT,LinearLayout.LayoutParams.WRAP_CONTENT);
@@ -127,6 +128,16 @@ public class ActivityShow extends AppCompatActivity  implements BaseSliderView.O
                 }
 
 
+                JSONArray rate = object.getJSONArray("comment");
+                for (int k = 0;k<rate.length();k++){
+                    JSONObject object2 = rate.getJSONObject(k);
+                    String one = object2.getString("1");
+                    String two = object2.getString("2");
+                    String three = object2.getString("3");
+                    String four = object2.getString("4");
+                    String five = object2.getString("5");
+                    Log.i("LOG",one+"/"+two+"/"+three+"/"+four+"/"+five);
+                }
 
                 txttitle_one.setText(title);
                 txttitle_two.setText(title);
