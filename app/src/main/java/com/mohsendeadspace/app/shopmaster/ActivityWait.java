@@ -18,7 +18,7 @@ public class ActivityWait extends AppCompatActivity {
 
         Bundle bundle=getIntent().getExtras();
         int id = bundle.getInt("id");
-        String idFinal=String.valueOf(id);
+        final String idFinal=String.valueOf(id);
 
         new AsyncTaskGetDetail("http://192.168.1.5/AndroidProject/MasterShop/getdetail.php",idFinal).execute();
         new AsyncTaskShowTimer("http://192.168.1.5/AndroidProject/MasterShop/androidtimer.php").execute();
@@ -37,6 +37,7 @@ public class ActivityWait extends AppCompatActivity {
                                 & !ActivityShow.timer.equals("")
                                 & !ActivityShow.info.equals("")){
                             Intent intent = new Intent(G.context,ActivityShow.class);
+                            intent.putExtra("id",idFinal);
                             startActivity(intent);
                             timer.cancel();
                             finish();

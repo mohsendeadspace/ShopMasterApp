@@ -1,5 +1,7 @@
 package com.mohsendeadspace.app.shopmaster;
 
+import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.text.Html;
@@ -7,6 +9,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -23,6 +26,8 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class ActivityShow extends AppCompatActivity  implements BaseSliderView.OnSliderClickListener {
 
@@ -34,12 +39,13 @@ public class ActivityShow extends AppCompatActivity  implements BaseSliderView.O
     public static String data= "";
     public static String info= "";
     public static String timer= "";
-    TextView txttitle_one,txttitle_two,txtcolor,txtGaurantee,txtDesc,txtPrice,txtMore;
-    LinearLayout linearPoint;
+    TextView txttitle_one,txttitle_two,txtcolor,txtGaurantee,txtDesc,txtPrice,txtMore,txtMark;
+    LinearLayout linearPoint,btnComment,btnfani;
     LinearLayout.LayoutParams layoutParams;
     public int pointLenth = 0;
 
 
+    RatingBar ratingBar;
     public static Handler handler;
     public int hourTimer = 0;
     public int minTimer = 0;
@@ -49,7 +55,11 @@ public class ActivityShow extends AppCompatActivity  implements BaseSliderView.O
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_show);
-       Log.i("Log",info);
+
+        Bundle bundle =getIntent().getExtras();
+        final String id = bundle.getString("id");
+        //Toast.makeText(G.context,id,Toast.LENGTH_SHORT).show();
+        // Log.i("Log",info);
         //Toast.makeText(G.context,info,Toast.LENGTH_LONG).show();
 
         txttitle_one =(TextView) findViewById(R.id.txttitle_one);
@@ -59,7 +69,54 @@ public class ActivityShow extends AppCompatActivity  implements BaseSliderView.O
         txtDesc =(TextView) findViewById(R.id.txtDesc);
         txtPrice =(TextView) findViewById(R.id.txtPrice);
         txtMore =(TextView) findViewById(R.id.txtMore);
+        txtMark =(TextView) findViewById(R.id.txtMark);
         linearPoint =(LinearLayout) findViewById(R.id.linearPoint);
+        btnComment =(LinearLayout) findViewById(R.id.btnComment);
+        btnfani =(LinearLayout) findViewById(R.id.btnfani);
+        ratingBar =(RatingBar) findViewById(R.id.ratingBar);
+
+        btnComment.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent i = new Intent(G.context,ActivityComment.class);
+                startActivity(i);
+
+            }
+        });
+
+        btnfani.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                new AsyncTaskGetProperties("http://192.168.1.5/AndroidProject/MasterShop/fani.php",id).execute();
+
+                final ProgressDialog dialog = new ProgressDialog(ActivityShow.this);
+                dialog.setMessage("لطفا منتظر بمانید ...");
+                dialog.show();
+
+                final Timer timer =  new Timer();
+                timer.scheduleAtFixedRate(new TimerTask() {
+                    @Override
+                    public void run() {
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                if(!ActivityProperties.data.equals("")){
+
+                                    dialog.cancel();
+                                    //Toast.makeText(G.context,ActivityProperties.data,Toast.LENGTH_SHORT).show();
+                                    timer.cancel();
+
+                                }
+                            }
+                        });
+                    }
+                },1,1000);
+
+
+            }
+        });
 
 
         txtMore.setOnClickListener(new View.OnClickListener() {
@@ -116,11 +173,15 @@ public class ActivityShow extends AppCompatActivity  implements BaseSliderView.O
                 String color = object.getString("color");
                 String gaurantee = object.getString("gaurantee");
 
+                float rating = Float.valueOf(object.getString("rating"));
+                ratingBar.setRating(rating);
+                txtMark.setText(rating+" از 5");
+
                 JSONArray points = object.getJSONArray("point");
                 for (int j = 0; j< points.length(); j++){
                     String title2 = (String) points.get(j);
                     pointLenth = points.length();
-                    Toast.makeText(G.context,pointLenth+"",Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(G.context,pointLenth+"",Toast.LENGTH_SHORT).show();
                     CustomPoint customPoint = new CustomPoint(G.context);
                     customPoint.txtPoint.setText(title2);
                     layoutParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT,LinearLayout.LayoutParams.WRAP_CONTENT);
@@ -128,7 +189,7 @@ public class ActivityShow extends AppCompatActivity  implements BaseSliderView.O
                 }
 
 
-                JSONArray rate = object.getJSONArray("comment");
+              /*  JSONArray rate = object.getJSONArray("comment");
                 for (int k = 0;k<rate.length();k++){
                     JSONObject object2 = rate.getJSONObject(k);
                     String one = object2.getString("1");
@@ -137,7 +198,7 @@ public class ActivityShow extends AppCompatActivity  implements BaseSliderView.O
                     String four = object2.getString("4");
                     String five = object2.getString("5");
                     Log.i("LOG",one+"/"+two+"/"+three+"/"+four+"/"+five);
-                }
+                }*/
 
                 txttitle_one.setText(title);
                 txttitle_two.setText(title);

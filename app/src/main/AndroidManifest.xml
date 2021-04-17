@@ -66,6 +66,22 @@
       </intent-filter>
     </activity>
 
+    <activity android:name=".ActivityComment">
+      <intent-filter>
+        <action android:name="android.intent.action.ACTIVITYCOMMENT" />
+
+        <category android:name="android.intent.category.DEFULTE" />
+      </intent-filter>
+    </activity>
+
+    <activity android:name=".ActivityProperties">
+      <intent-filter>
+        <action android:name="android.intent.action.ACTIVITYPROPERTIES" />
+
+        <category android:name="android.intent.category.DEFULTE" />
+      </intent-filter>
+    </activity>
+
   </application>
 
 </manifest>
