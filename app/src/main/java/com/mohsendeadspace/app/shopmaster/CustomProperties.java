@@ -12,7 +12,8 @@ import androidx.annotation.Nullable;
 
 public class CustomProperties extends LinearLayout {
 
-    TextView pname,pvalue;
+     public static TextView pname;
+     public static TextView pvalue;
 
     public CustomProperties(Context context) {
         super(context);

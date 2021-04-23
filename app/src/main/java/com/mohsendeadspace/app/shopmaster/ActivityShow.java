@@ -105,7 +105,8 @@ public class ActivityShow extends AppCompatActivity  implements BaseSliderView.O
                                 if(!ActivityProperties.data.equals("")){
 
                                     dialog.cancel();
-                                    //Toast.makeText(G.context,ActivityProperties.data,Toast.LENGTH_SHORT).show();
+                                    Intent intent = new Intent(G.context,ActivityProperties.class);
+                                    startActivity(intent);
                                     timer.cancel();
 
                                 }

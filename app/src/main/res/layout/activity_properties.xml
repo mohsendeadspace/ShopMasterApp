@@ -2,13 +2,15 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
+    <include layout="@layout/toolbar"/>
+
 
 
     <LinearLayout
 
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
+        android:orientation="vertical"
         android:gravity="center">
 
         <TextView
@@ -20,6 +22,20 @@
             android:layout_height="wrap_content"
             android:id="@+id/productname"/>
 
-    </LinearLayout>
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#4E4D4D"/>
 
+        <LinearLayout
+            android:background="#919191"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:id="@+id/linearCustomProperties">
+
+        </LinearLayout>
+
+
+    </LinearLayout>
 </LinearLayout>
