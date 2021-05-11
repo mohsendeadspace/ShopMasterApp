@@ -82,6 +82,16 @@
       </intent-filter>
     </activity>
 
+
+    <activity android:name=".ActivitySetPoint">
+      <intent-filter>
+        <action android:name="android.intent.action.ACTIVITYSETPOINT" />
+
+        <category android:name="android.intent.category.DEFULTE" />
+      </intent-filter>
+    </activity>
+
+
   </application>
 
 </manifest>

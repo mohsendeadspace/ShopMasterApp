@@ -3,6 +3,8 @@ package com.mohsendeadspace.app.shopmaster;
 import android.os.Bundle;
 import android.text.Html;
 import android.util.Log;
+import android.view.View;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -23,6 +25,7 @@ public class ActivityProperties extends AppCompatActivity {
     public String pName;
     LinearLayout.LayoutParams layoutParams;
     LinearLayout linearCustomProperties;
+    ImageView img_close;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,6 +35,14 @@ public class ActivityProperties extends AppCompatActivity {
 
         productname= findViewById(R.id.productname);
         linearCustomProperties= findViewById(R.id.linearCustomProperties);
+        img_close= (ImageView) findViewById(R.id.img_close);
+
+        img_close.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 
         //CustomProperties customProperties = new CustomProperties(G.context);
 

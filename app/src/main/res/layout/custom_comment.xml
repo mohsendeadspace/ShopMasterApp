@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="4dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginTop="4dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layoutDirection="rtl"
+                android:padding="10dp"
+                android:orientation="horizontal"
+                android:background="#AEABAB"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_gravity="center_vertical"
+                    android:layout_width="0dp"
+                    android:orientation="horizontal"
+                    android:layout_weight="0.5"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:src="@drawable/ic_baseline_comment_24"/>
+                    <TextView
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginRight="8dp"
+                        android:textSize="18dp"
+                        android:textColor="#2B2B2B"
+                        android:id="@+id/txtUser"
+                        android:text="ناشناس"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="0.5"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:background="@drawable/likeshape"
+                        android:layout_width="0dp"
+                        android:gravity="center"
+                        android:layout_marginLeft="4dp"
+                        android:id="@+id/linearlike"
+                        android:layout_weight="0.5"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/txtlike"
+                            android:layout_gravity="center_vertical"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="#FFFFFF"
+                            android:textSize="18dp"
+                            android:layout_marginLeft="8dp"
+                            android:text="32"/>
+
+                        <ImageView
+                            android:layout_gravity="center_vertical"
+                            android:id="@+id/imglike"
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"
+                            android:src="@drawable/like"/>
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:background="@drawable/dislikeshape"
+                        android:layout_width="0dp"
+                        android:gravity="center"
+                        android:id="@+id/lineardislike"
+                        android:layout_marginRight="4dp"
+                        android:layout_weight="0.5"
+                        android:layout_height="wrap_content">
+
+
+                        <TextView
+                            android:id="@+id/txtdislike"
+                            android:layout_gravity="center_vertical"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="#FFFFFF"
+                            android:textSize="18dp"
+                            android:layout_marginLeft="8dp"
+                            android:text="5"/>
+
+                        <ImageView
+                            android:id="@+id/imgdislike"
+                            android:layout_width="32dp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_height="32dp"
+                            android:src="@drawable/dislike"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+
+
+
+
+
+            </LinearLayout>
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:background="#DFDEDE"
+                android:orientation="vertical"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginRight="8dp"
+                    android:text="comment"
+                    android:textColor="#2B2B2B"
+                    android:layout_gravity="right"
+                    android:id="@+id/txtCommentTitle"
+                    android:gravity="right"
+                    android:textSize="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+
+                    android:text="@string/comment"
+                    android:padding="8dp"
+                    android:textSize="15dp"
+
+                    android:layout_gravity="center"
+                    android:textColor="#2B2B2B"
+                    android:id="@+id/txtCommentContent"
+                    android:gravity="center"
+                    android:layoutDirection="rtl"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+
+
+
+
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#959595"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginLeft="8dp"/>
+
+                <LinearLayout
+                    android:id="@+id/linearPositive"
+                    android:padding="8dp"
+                    android:layout_width="match_parent"
+                    android:orientation="vertical"
+                    android:layout_height="wrap_content">
+
+
+
+
+
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#959595"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginLeft="8dp"/>
+
+                <LinearLayout
+                    android:id="@+id/linearPoints"
+                    android:orientation="vertical"
+                    android:padding="8dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+
+
+                </LinearLayout>
+
+
+
+
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:background="#BDBDBD"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="ادامه مطلب"
+                    android:textColor="#2B2B2B"
+                    android:textSize="18dp"
+                    android:layout_marginBottom="4dp"
+                    android:layout_marginTop="4dp"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+
+
+
+    </androidx.cardview.widget.CardView>
+
+
+
+
+</LinearLayout>

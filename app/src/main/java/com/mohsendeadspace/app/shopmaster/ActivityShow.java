@@ -79,8 +79,32 @@ public class ActivityShow extends AppCompatActivity  implements BaseSliderView.O
             @Override
             public void onClick(View v) {
 
-                Intent i = new Intent(G.context,ActivityComment.class);
-                startActivity(i);
+                new AsyncTaskComment("http://192.168.1.5/AndroidProject/MasterShop/comment.php",id).execute();
+
+                final ProgressDialog dialog = new ProgressDialog(ActivityShow.this);
+                dialog.setMessage("لطفا منتظر بمانید ...");
+                dialog.show();
+
+                final Timer timer =  new Timer();
+                timer.scheduleAtFixedRate(new TimerTask() {
+                    @Override
+                    public void run() {
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                if(!ActivityComment.data.equals("")){
+
+                                    dialog.cancel();
+                                   Intent intent = new Intent(G.context,ActivityComment.class);
+                                    startActivity(intent);
+                                    timer.cancel();
+
+                                }
+                            }
+                        });
+                    }
+                },1,1000);
+
 
             }
         });

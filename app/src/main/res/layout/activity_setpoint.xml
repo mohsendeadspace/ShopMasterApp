@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.Toolbar android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="#2196F3"
+            xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:gravity="right|center_vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="22dp"
+                    android:text="امتیاز دهی محصول"
+                    android:layout_marginRight="32dp"
+                    android:textColor="#ffffff"/>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:id="@+id/linearAddCustomComment">
+
+
+            </LinearLayout>
+
+
+        </androidx.appcompat.widget.Toolbar>
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+     android:gravity="center"
+    android:padding="8dp"
+    android:layout_weight="0.8"
+    android:orientation="vertical">
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:padding="8dp"
+        android:layout_height="0dp"
+        android:layout_weight="0.2">
+
+        <LinearLayout
+            android:background="#1565C0"
+            android:layout_width="0dp"
+            android:layout_weight="0.5"
+            android:layout_marginRight="2dp"
+            android:layout_marginLeft="2dp"
+            android:gravity="center|center_vertical"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ثبت امتیاز و نظر "
+                android:textColor="#ffffff"
+                android:textSize="20dp"/>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_marginRight="2dp"
+            android:layout_marginLeft="2dp"
+            android:background="#4DBA52"
+            android:layout_weight="0.5"
+            android:gravity="center|center_vertical"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ثبت امتیاز و بازگشت"
+                android:textColor="#ffffff"
+                android:textSize="20dp"/>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -335,7 +335,7 @@ public class MainActivity extends AppCompatActivity implements BaseSliderView.On
     linerShowAllProduct.setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View view) {
-        Toast.makeText(G.context, "clicked", Toast.LENGTH_SHORT).show();
+
       }
     });
 

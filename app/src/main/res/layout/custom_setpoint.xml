@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content"
+        android:layoutDirection="rtl"
+        android:gravity="center">
+
+
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="0.5"
+            android:layout_marginRight="16dp"
+            android:layout_height="wrap_content"
+            android:textColor="#2B2B2B"
+            android:id="@+id/txtParamTitle"
+            android:textSize="16dp"
+            android:text="ارزش خرید به نسبت قیمت:"/>
+
+
+        <com.hedgehog.ratingbar.RatingBar
+            android:id="@+id/ratingbarSetPoint"
+            android:layout_width="0dp"
+            android:layout_weight="0.5"
+            android:layout_height="wrap_content"
+            app:starCount="5"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:clickable="true"
+            app:starEmpty="@drawable/lineempty"
+            app:starFill="@drawable/line"
+            android:padding="8dp"/>
+
+    </LinearLayout>
+
+
+</LinearLayout>
